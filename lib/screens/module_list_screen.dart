@@ -8,6 +8,7 @@ import '../widgets/custom_header.dart';
 import 'module_detail_screen.dart';
 
 class ModuleListScreen extends StatelessWidget {
+  //tela principal onde os usuários podem visualizar a lista de módulos de estudo que criaram, criar novos módulos e acessar os detalhes de cada módulo. A tela é projetada para ser intuitiva e visualmente atraente, seguindo as especificações do design system para garantir uma experiência de usuário consistente e agradável. Os usuários podem tocar em um módulo para acessar seus detalhes, editar ou excluir módulos existentes, e criar novos módulos usando um botão de ação flutuante (FAB) que segue as diretrizes de design para botões CTA.
   const ModuleListScreen({super.key});
 
   static const double kRadiusCard = 22.0;

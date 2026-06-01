@@ -4,14 +4,16 @@ import '../theme/app_colors.dart';
 import '../widgets/custom_header.dart';
 
 class AboutScreen extends StatelessWidget {
+  //tela de informações sobre o aplicativo, onde os usuários podem encontrar detalhes sobre o desenvolvedor, o contexto acadêmico do projeto e as funcionalidades oferecidas pelo Studycards. A tela é projetada para ser informativa e visualmente consistente com o restante do aplicativo, utilizando os mesmos tokens de design e seguindo as especificações tipográficas definidas no design system.
   const AboutScreen({super.key});
 
-  @override
+  @override //sobrescreve o método build para construir a interface da tela de informações. Ele utiliza um Scaffold para estruturar a tela, com um CustomHeader como appBar e um ListView como corpo para permitir a rolagem do conteúdo. O conteúdo é organizado em blocos de texto e cartões informativos, seguindo as especificações de espaçamento e estilo definidas no design system, garantindo uma experiência de usuário consistente e agradável.
   Widget build(BuildContext context) {
     // Medidas de espaçamento idênticas às das telas Home e Estudar para consistência Pixel Perfect
     final double topSpacing = MediaQuery.of(context).padding.top + 60.0;
 
     return Scaffold(
+      //estrutura básica da tela, utilizando um Scaffold para fornecer a estrutura visual e funcional necessária para a tela de informações. O Scaffold inclui um CustomHeader como appBar, que é um componente personalizado para o cabeçalho da tela, e um ListView como corpo para permitir a rolagem do conteúdo informativo. O backgroundColor é definido usando uma cor do tema para garantir consistência visual com o restante do aplicativo.
       backgroundColor: AppColors.background,
       appBar: const CustomHeader(),
       extendBodyBehindAppBar:
@@ -159,6 +161,7 @@ class AboutScreen extends StatelessWidget {
 
   // Helper para construir os títulos de seções internas do cartão informativo
   Widget _buildSectionTitle(IconData icon, String label) {
+    //método auxiliar para construir os títulos de seções internas do cartão informativo, combinando um ícone e um rótulo de texto. Ele recebe um ícone e um rótulo como parâmetros e retorna um widget Row que exibe o ícone ao lado do texto, estilizado de acordo com as especificações do design system para garantir consistência visual.
     return Row(
       children: [
         Icon(icon, size: 16, color: AppColors.mutedForeground),

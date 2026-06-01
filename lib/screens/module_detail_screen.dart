@@ -10,11 +10,13 @@ import '../widgets/custom_header.dart';
 import 'study_session_screen.dart';
 
 class ModuleDetailScreen extends StatelessWidget {
-  final StudyModule module;
+  //tela de detalhes de um módulo específico, onde os usuários podem visualizar informações sobre o módulo, como o nome, descrição, progresso e estatísticas dos flashcards associados. A tela também permite que os usuários criem novos flashcards, editem ou excluam flashcards existentes e iniciem uma sessão de estudo com os flashcards do módulo. A interface é projetada para ser informativa e fácil de usar, seguindo as especificações de design definidas no design system para garantir uma experiência de usuário consistente e agradável.
+  final StudyModule
+  module; //atributo que representa o módulo de estudo cujos detalhes estão sendo exibidos na tela. Ele é passado como um parâmetro obrigatório para o construtor da classe, permitindo que a tela exiba as informações e os flashcards associados ao módulo específico selecionado pelo usuário.
 
   const ModuleDetailScreen({super.key, required this.module});
 
-  @override
+  @override //sobrescreve o método build para construir a interface da tela de detalhes do módulo. Ele utiliza um Scaffold para estruturar a tela, com um CustomHeader como appBar e um ListView como corpo para permitir a rolagem do conteúdo. O conteúdo é organizado em blocos de texto, cartões de estatísticas, um indicador de progresso e uma lista de flashcards associados ao módulo, seguindo as especificações de espaçamento e estilo definidas no design system, garantindo uma experiência de usuário consistente e agradável.
   Widget build(BuildContext context) {
     final store = context.watch<StudyStore>();
 
@@ -190,6 +192,7 @@ class ModuleDetailScreen extends StatelessWidget {
   }
 
   Widget _buildProgressCard(double progress) {
+    //método privado para construir um cartão de progresso, que exibe o progresso do usuário em relação aos flashcards do módulo. Ele recebe um valor de progresso (entre 0 e 1) como parâmetro e exibe uma barra de progresso linear, além de mostrar a porcentagem correspondente. O cartão é estilizado com um fundo branco, bordas arredondadas e uma borda para destacar o conteúdo, seguindo as especificações de design definidas no design system para garantir uma experiência de usuário consistente e agradável.
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -233,6 +236,7 @@ class ModuleDetailScreen extends StatelessWidget {
   }
 
   Widget _buildActionButton({
+    //método privado para construir um botão de ação, que é usado para criar novos flashcards ou iniciar uma sessão de estudo. Ele recebe parâmetros para o rótulo do botão, o ícone, se o botão deve ser preenchido ou apenas contornado, e uma função de callback para quando o botão for pressionado. O botão é estilizado de acordo com as especificações do design system, garantindo consistência visual e uma experiência de usuário agradável.
     required String label,
     required IconData icon,
     required bool isFilled,
@@ -268,6 +272,7 @@ class ModuleDetailScreen extends StatelessWidget {
   }
 
   Widget _buildFlashcardItem(BuildContext context, Flashcard card) {
+    //método privado para construir um item de flashcard, que exibe a pergunta e resposta de um flashcard específico, além de permitir que os usuários editem ou excluam o flashcard. Ele recebe o contexto e o flashcard como parâmetros e retorna um widget Container estilizado com um indicador de nível de domínio, a pergunta e resposta do flashcard, e botões para editar ou excluir o flashcard. O layout é projetado para ser claro e fácil de usar, seguindo as especificações de design definidas no design system para garantir uma experiência de usuário consistente e agradável.
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(20),
@@ -389,6 +394,7 @@ class ModuleDetailScreen extends StatelessWidget {
   }
 
   void _showAddCardSheet(BuildContext context, {Flashcard? editing}) {
+    //método privado para exibir uma folha modal para criar ou editar um flashcard. Ele recebe o contexto e um flashcard opcional para edição. A folha modal inclui campos de texto para a pergunta e resposta do flashcard, além de um botão para salvar as alterações. Se um flashcard for fornecido para edição, os campos de texto serão preenchidos com as informações existentes do flashcard, permitindo que os usuários façam alterações facilmente. O layout da folha modal é projetado para ser claro e fácil de usar, seguindo as especificações de design definidas no design system para garantir uma experiência de usuário consistente e agradável.
     final perguntaController = TextEditingController(text: editing?.pergunta);
     final respostaController = TextEditingController(text: editing?.resposta);
 
